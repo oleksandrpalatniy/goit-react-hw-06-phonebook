@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import { addCon, delCon, filterCon } from './contactActions';
 
@@ -8,7 +9,7 @@ const initialState = {
   },
 };
 
-export default createReducer(initialState, {
+const contacts = createReducer(initialState, {
   [addCon.type]: (state, action) => {
     state.contacts.items = [...state.contacts.items, action.payload];
   },
@@ -21,3 +22,10 @@ export default createReducer(initialState, {
     state.contacts.filter = action.payload;
   },
 });
+
+
+
+
+export default combineReducers({
+  contacts,
+})

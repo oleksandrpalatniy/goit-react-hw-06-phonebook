@@ -4,7 +4,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import store from './redux/store';
 import Form from './components/phonebook/Form';
 import AddPhoneList from './components/phonebook/PhoneList';
-import Filter from './components/phonebook/Filter';
+// import Filter from './components/phonebook/Filter';
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <Provider store={store.store}>
         <PersistGate loading={null} persistor={store.persistor}>
           <Form />
-          <Filter />
+          {/* <Filter /> */}
           <AddPhoneList />
         </PersistGate>
       </Provider>

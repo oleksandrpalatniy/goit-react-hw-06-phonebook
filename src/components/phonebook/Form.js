@@ -6,12 +6,15 @@ import styles from './phonebook.module.css';
 import * as actions from '../../redux/contactActions';
 import { useDispatch, useSelector } from 'react-redux';
 
+
+
 export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.reducer.contacts.items);
+  const contacts = useSelector(state => state.reducer.contacts.contacts.items);
+  
 
   const nameInputId = shortid.generate();
   const numberInputId = shortid.generate();
